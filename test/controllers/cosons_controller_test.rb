@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CosonControllerTest < ActionDispatch::IntegrationTest
+class CosonsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
