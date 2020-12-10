@@ -16,6 +16,10 @@ class CosonsController < ApplicationController
     end
   end
 
+  def show
+    @coson = Coson.find(params[:id])
+  end
+
   private
 
   def coson_params
