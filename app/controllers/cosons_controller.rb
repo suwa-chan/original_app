@@ -34,6 +34,9 @@ class CosonsController < ApplicationController
   end
 
   def destroy
+    coson = Coson.find(params[:id])
+    coson.destroy
+    redirect_to root_path
   end
 
   private
