@@ -1,9 +1,10 @@
 class CosonsController < ApplicationController
   def index
+    @cosons = Coson.all
   end
 
   def new
-    @cosons = Coson.new
+    @coson = Coson.new
   end
 
   def create
@@ -14,7 +15,6 @@ class CosonsController < ApplicationController
       render :new
     end
   end
-
 
   private
 
