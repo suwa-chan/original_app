@@ -5,6 +5,6 @@
     <p class="card__summary">
       <%= coson.info %>
     </p>
-    <%= link_to "by #{coson.user.name}", root_path, class: :card__user %>
+    <%= link_to "by #{coson.user.name}", user_path(coson.user.id), method: :get, class: :card__user %>
   </div>
 </div>
