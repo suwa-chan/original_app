@@ -4,8 +4,6 @@ class Coson < ApplicationRecord
 
   with_options presence: true do
     validates :title
-    validates :info
-    validates :url
     validates :image
   end
 end
