@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_12_10_042248) do
 
   create_table "cosons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "info", null: false
-    t.string "url", null: false
+    t.text "info"
+    t.string "url"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
