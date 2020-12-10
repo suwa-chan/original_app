@@ -1,1 +1,56 @@
-<h1>coson</h1>
+<main class="main">
+  <div class="inner">
+    <div class='feature-contents'>
+      <h2 class='title'>
+        cosonとは？
+      </h2>
+      <ul class='feature-lists'>
+        <li class='list'>
+          <%= image_tag "intro01.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            全ての情報を一箇所に
+          </h3>
+          <p class='feature-list-description'>
+            SNS、ネット記事の情報を
+          </p>
+          <p class='feature-list-description'>
+            テーマ別に分けてURLで保存
+          </p>
+        </li>
+        <li class='list'>
+          <%= image_tag "intro02.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            飲食店の情報も
+          </h3>
+          <p class='feature-list-description'>
+            ラーメン屋、ディナーなど
+          </p>
+          <p class='feature-list-description'>
+            違う媒体からテーマ別に保存
+          </p>
+        </li>
+        <li class='list'>
+          <%= image_tag "intro03.png", class:"list-pict" %>
+          <h3 class='feature-list-text'>
+            学習のための記事も
+          </h3>
+          <p class='feature-list-description'>
+            プログラミング、英語など
+          </p>
+          <p class='feature-list-description'>
+            違う媒体からテーマ別に保存
+          </p>
+        </li>
+      </ul>
+    </div>
+    <%# ログインしているときは以下を表示する %>
+      <%# <div class="greeting"> %>
+        <%# こんにちは、 %>
+        <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
+      <%# </div> %>
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+    </div>
+  </div>
+</main>
