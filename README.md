@@ -1,24 +1,73 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| name       | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :prototypes
 
-* Configuration
+## prototypes テーブル
 
-* Database creation
+| Column     | Type       | Options     |
+| ---------- | ---------- | ----------- |
+| title      | string     | null: false |
+| info       | text       |             |
+| url        | text       |             |
+| user       | references | null: false |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+# アプリケーション名 :coson
 
-* Deployment instructions
+# 概要
+  あらゆる媒体から集めた情報をテーマ別に保管しておくことができるアプリケーションです。
+  例えば、InstagramやTwitterで見つけた飲食店であれば、例として「ラーメン」であったり、
+  QiitaやYoutubeで見つけた教材記事であれば、言語別・エラー別などに分けることが可能です。
+  分け方はURLによる保管です。URL保管の形をとった理由は、すぐにアクセスできること、全てのページにあるものであることが、
+  私の中で絶対条件だったからです。情報の集約化（consolidate）という意味から、cosonという名前をつけました。
 
-* ...
+# URL
+  https://coson.herokuapp.com/
+
+# テスト用アカウント
+ |email| aaa@aaa  |password| welcome0405
+
+# 利用方法
+  ①新規登録し、アカウントを作成します
+  ②ログインし、New cosonをクリック
+  ③タイトルを決め、必要であれば説明を記載します
+  ④そのタイトルに保管しておきたいURLを貼ります
+  ⑤マイページには、自分の投稿したcosonがあります
+  ⑥トップページには他者が投稿したcosonがあります
+
+# 目指した課題解決
+  私はこのアプリケーションを通じて、情報をまとめることが苦手な方や、各媒体でのいいねした投稿を集約したいと感じている方々の、
+  「あれ、この間いいねした投稿、どこだっけ？」「同じ問題に直面してるんだから情報をまとめておきたいけど、ノートに文章を起こすのは面倒だ」
+  といった感情を対象に、情報を集約していつでもアクセスできるようにしておきたいという思いから、このアプリケーションを制作しました。
+               
+
+# 要件定義
+| 機能                  | 目的                                                        |
+| -------------------  | ----------------------------------------------------------- |
+| ユーザー管理機能        | ユーザーの新規登録、ログイン、ログアウトができるようにするため        |
+| coson作成機能          | アクセスしたい情報を保存できるcosonを作成するため                  |
+| coson編集機能          | 該当するcosonの作成者が、作成したcoson内容を編集できるようにするため |
+| coson削除機能          | 該当するcosonの作成者が、不要になったcosonを削除できるようにするため |
+| coson詳細表示          | cosonの詳細情報を閲覧できるようにするため                        |
+| マイページ             | 自分のcoson一覧を確認できるようにするため                         |
+| AWS S3実装            | 画像のリンク切れを防ぐため                                      |
+
+
+# 実装予定の機能
+| 機能                  | 目的                                                        　|
+| -------------------  | ------------------------------------------------------------ |
+| 入力フォームの追加・削除 | いくつでも情報を保管できるようにするため                            |
+| いいね機能             | 他者が投稿したcosonをお気に入りしていつでもアクセスできるようにするため |
+| 検索機能               | キーワードで検索し、関連する投稿を呼び出すため                      |
