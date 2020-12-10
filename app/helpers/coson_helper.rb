@@ -1,0 +1,2 @@
+module CosonHelper
+end
