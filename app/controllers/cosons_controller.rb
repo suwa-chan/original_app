@@ -20,6 +20,12 @@ class CosonsController < ApplicationController
     @coson = Coson.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def coson_params
