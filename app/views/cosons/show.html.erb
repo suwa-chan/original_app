@@ -5,12 +5,12 @@
         <%= @coson.title%>
       </p>
       <%= link_to "by #{@coson.user.name}", root_path, class: :coson__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @coson.user_id %>
         <div class="coson__manage">
           <%= link_to "編集する", root_path, class: :coson__btn %>
           <%= link_to "削除する", root_path, class: :coson__btn %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <% end %>
       <div class="coson__image">
         <%= image_tag @coson.image %>
       </div>
