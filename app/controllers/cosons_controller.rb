@@ -33,9 +33,6 @@ class CosonsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
 
   def coson_params
