@@ -1,0 +1,2 @@
+class Coson < ApplicationRecord
+end
