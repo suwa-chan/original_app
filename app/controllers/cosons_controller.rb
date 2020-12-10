@@ -1,5 +1,7 @@
 class CosonsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_coson, only: [:edit, :show]
+  before_action :move_to_index, only: [:edit]
 
   def index
     @cosons = Coson.all
@@ -48,4 +50,11 @@ class CosonsController < ApplicationController
   def set_coson
     @coson = Coson.find(params[:id])
   end
+
+  def move_to_index
+    unless user_signed_in? && current_user.id == @coson.user.id
+      redirect_to action: :index
+    end
+  end
+
 end
