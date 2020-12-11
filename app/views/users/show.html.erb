@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "My coson"%>
+      </h2>
+      <div class="user__card">
+        <%= render partial: "cosons/coson", collection: @cosons %>
+      </div>
+    </div>
+  </div>
+</div>

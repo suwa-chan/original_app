@@ -1,0 +1,33 @@
+<main class="main">
+  <div class="inner">
+    <div class="coson__wrapper">
+      <p class="coson__hedding">
+        <%= @coson.title%>
+      </p>
+      <%= link_to "by #{@coson.user.name}", user_path(@coson.user_id), class: :coson__user %>
+      <% if user_signed_in? && current_user.id == @coson.user_id %>
+        <div class="coson__manage">
+          <%= link_to "編集する", edit_coson_path(@coson[:id]), method: :get, class: :coson__btn %>
+          <%= link_to "削除する", coson_path(@coson[:id]), method: :delete, class: :coson__btn %>
+        </div>
+      <% end %>
+      <div class="coson__image">
+        <%= image_tag @coson.image %>
+      </div>
+      <div class="coson__body">
+        <div class="coson__detail">
+          <p class="coson__title">説明</p>
+          <p class="detail__message">
+            <%= @coson.info %>
+          </p>
+        </div>
+        <div class="coson__detail">
+          <p class="coson__title">URL</p>
+          <p class="detail__message">
+            <%= @coson.url %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

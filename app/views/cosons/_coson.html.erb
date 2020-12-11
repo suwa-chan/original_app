@@ -1,0 +1,7 @@
+<div class="card">
+  <%= link_to image_tag(coson.image, class: :card__img), coson_path(coson.id), method: :get%>
+  <div class="card__body">
+    <%= link_to coson.title,coson_path(coson.id), method: :get, class: :card__title%>
+    <%= link_to "by #{coson.user.name}", user_path(coson.user.id), method: :get, class: :card__user %>
+  </div>
+</div>
