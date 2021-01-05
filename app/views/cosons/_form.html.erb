@@ -1,25 +1,32 @@
 <%= form_with(model: coson, local: true) do |f|%>
   <div class="field">
-    <%= f.label :title, "タイトル" %><br />
-    <%= f.text_area :title %>
+    <%= f.text_area :title, class: :form__text, placeholder: :"タイトル" %>
   </div>
 
   <div class="field">
-    <%= f.label :info, "説明" %><br />
-    <%= f.text_area :info, class: :form__text %>
+    <%= f.text_area :info, class: :form__text, placeholder: :"説明" %>
   </div>
 
-  <div class="field">
-    <%= f.label :url, "URL" %><br />
-    <%= f.text_area :url, class: :form__text %>
-    <%= f.text_area :url, class: :form__text %>
-    <%= f.text_area :url, class: :form__text %>
-    <%= f.text_area :url, class: :form__text %>
-    <%= f.text_area :url, class: :form__text %>
-  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).on("click", ".add", function() {
+      $(this).parent().clone(true).insertAfter($(this).parent());
+  });
+  $(document).on("click", ".del", function() {
+      var target = $(this).parent();
+      if (target.parent().children().length > 1) {
+          target.remove();
+      }
+  });
+  </script>
+
+    <div class="field">
+      <%= f.text_field :url, class: :form__text, placeholder: :"url"%>
+      <input type="button" value="＋" class="add pluralBtn">
+      <input type="button" value="－" class="del pluralBtn">
+    </div>
 
   <div class="field">
-    <%= f.label :image, "テーマ画像" %><br />
     <%= f.file_field :image %>
   </div>
 
